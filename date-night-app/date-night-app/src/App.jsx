@@ -261,7 +261,7 @@ Location: ${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}
 Budget: ${budgetLabel} per person
 Radius: Within ${r} miles
 
-Use web search to find REAL outdoor adventures and a casual/scenic food spot near this location.
+Suggest REAL outdoor adventures and a casual/scenic food spot near this location. Use your knowledge of the area.
 Adventure ideas: white water rafting, hiking trails, kayaking, rock climbing, zip-lining, mountain biking, scenic walks, paddleboarding, waterfall hikes, nature reserves, state/national parks, canyoning, etc.
 
 Return a JSON object ONLY (no markdown, no explanation) with this structure:
@@ -294,7 +294,7 @@ Location: ${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}
 Budget: ${budgetLabel} per person
 Radius: Within ${r} miles
 
-Use web search to find REAL places near this location. Activity ideas: movies with current showtimes, concerts, axe throwing, escape rooms, bowling, museums, comedy clubs, rooftop bars, wine tasting, painting classes, mini golf, go-karts, arcades, live music venues.
+Suggest REAL places near this location using your knowledge of the area. Activity ideas: movies with current showtimes, concerts, axe throwing, escape rooms, bowling, museums, comedy clubs, rooftop bars, wine tasting, painting classes, mini golf, go-karts, arcades, live music venues.
 
 Return a JSON object ONLY (no markdown, no explanation) with this exact structure:
 {
@@ -328,7 +328,6 @@ Return a JSON object ONLY (no markdown, no explanation) with this exact structur
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1200,
-          tools: [{ type: "web_search_20250305", name: "web_search" }],
           messages: [{ role: "user", content: prompt }],
         }),
       });
